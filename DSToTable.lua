@@ -1,3 +1,4 @@
+--Copyright (C) Ethan Sweet 2014, All Rights Reserved.
 CreateDSTable=function(index,type)
   local ds
   if type==nil or type=='' then
