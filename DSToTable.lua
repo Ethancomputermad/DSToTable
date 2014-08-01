@@ -33,4 +33,18 @@ CreateDSTable=function(index,type)
 end
 
 --[[
-Examples
+Documentation:
+
+	[function] CreateDSTable([string] index, [string] type)
+	index is the DataStore is used
+	type is the type of DataStore (nil or '' for a regular DataStore, 'Ordered' for OrderedDataStore, 'Global' for GlobalDataStore
+	Returns [table] DSTable
+	
+	
+
+	[table] DSTable
+		All calls to this table to get an index goes to the DataStore, for example CreateDSTable('test','Ordered').hi is the same as game:GetService('DataStoreService'):GetOrderedDataStore('test'):GetAsync('hi') and therefore returns the same
+		All calls to this table to set an index goes to the DataStore, for example CreateDSTable('test','Ordered').hi='hello!' is the same as game:GetService('DataStoreService'):GetOrderedDataStore('test'):SetAsync('hi',true)
+		The system is cached per table, so that you can call to the same address infinetly and only use up one request in the DataStore request limit
+		
+]]
